@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char[] carr = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<carr.length;i++){
+            if(carr[i]=='.'){
+                sb.append("0");
+            }
+            if(carr[i]=='-'&&carr[i+1]=='.'){
+                sb.append("1");
+                ++i;
+                
+            }
+            if(carr[i]=='-'&&carr[i+1]=='-'){
+                sb.append("2");
+                ++i;
+            }
+        }
+        System.out.println(sb.toString());
+    }
+}

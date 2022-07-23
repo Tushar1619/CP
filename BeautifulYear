@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int y = sc.nextInt();
+        int s=y;
+        int e=9000;
+        int ans = 0;
+        while(s<=e){
+            int mid = (s+e)>>1;
+        
+            if(func(mid)){
+                if(mid!=y){
+                    ans = mid;
+                }
+                
+               
+            }
+            if(mid<=y){
+                s=mid+1;
+            }
+            else{
+                e=mid-1;
+            }
+            
+            
+        }
+        System.out.println(ans);
+    }
+    public static boolean func(int num){
+        Set<Integer> set = new HashSet<>();
+        while(num!=0){
+            int digit = num%10;
+            num/=10;
+            set.add(digit);
+        }
+        
+        if(set.size()==4)return true;
+        else return false;
+
+    }
+}

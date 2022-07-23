@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(Sytem.in);
+        int students = sc.nextInt();
+        int time = sc.nextInt();
+        String str = sc.nextLine();
+
+        char[] carr = str.toCharArray();
+        while(t--!=0){
+            for(int i=0;i<students;i++){
+                char ch = carr[i];
+                if(ch=='G')continue;
+                else{
+                    if(ch[i+1]='G'){
+                        ch[i+1]='B';
+                        ch[i]='G';
+                        i++;
+                    }
+                }
+            }
+        }
+       for(char el:carr){
+        System.out.println(el);
+       }
+
+    }
+}

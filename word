@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char[] charr = str.toCharArray();
+        int uc=0;
+        int lc=0;
+        for(char ch:charr){
+            if(ch>='a' && ch<='z')lc++;
+            if(ch>='A' && ch<='Z')uc++;
+        }
+        if(uc>lc){
+            for(int i=0;i<charr.length;i++){
+                char ch = charr[i];
+                if(ch>='a' && ch<='z'){
+                    charr[i]=(char)((ch-0)-97+65);
+                }
+            }
+        }
+        else{
+            for(int i=0;i<charr.length;i++){
+                char ch = charr[i];
+                if(ch>='A' && ch<='Z'){
+                    charr[i]=(char)((ch-0)-65+97);
+                }
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for(char ch:charr)
+        sb.append(ch);
+
+        System.out.println(sb.toString());
+    }
+}
