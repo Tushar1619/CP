@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main{
+    static int[] vyasa = new int[100001];
+    static int[] petya = new int[100001];
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n+1];
+        for(int i=1;i<=n;i++){
+            arr[i]=sc.nextInt();
+            vyasa[arr[i]]=i;
+            petya[arr[i]]=n-i+1;
+        }
+        int m=sc.nextInt();
+        long vy = 0;
+        long pet = 0;
+        while(m-->0){
+            int a = sc.nextInt();
+            vy+=vyasa[a];
+            pet+=petya[a];
+        }
+        System.out.println(vy+" "+pet);
+    }
+}
