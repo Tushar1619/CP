@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int[] arr = new int[8];
+        for(int i=1;i<=7;i++)
+        arr[i]=sc.nextInt();
+
+        int i=1;
+        while(n>0){
+            n-=arr[i];
+            if(n<=0) break;
+            i++;
+            if(i>7){
+                i=i%7;
+            }
+        }
+        System.out.println(i);
+    }
+}
