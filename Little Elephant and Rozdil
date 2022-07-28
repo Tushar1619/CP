@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int idx=-1;
+       int fmax=Integer.MAX_VALUE;
+       int smax=Integer.MAX_VALUE-1;
+       for(int i=1;i<=n;i++){
+        int val = sc.nextInt();
+        if(val<=fmax){
+            idx=i;
+            smax=fmax;
+            fmax=val;
+        }
+       }
+       String ans;
+       if(fmax==smax){
+        ans = "Still Rozdil";
+       }
+       else{
+        ans = ""+idx;
+        }
+        System.out.println(ans);
+    }
+}

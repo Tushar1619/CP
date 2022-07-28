@@ -1,0 +1,52 @@
+import java.util.*;
+public class Main{
+    public static String getAns(int f,int z){
+        StringBuilder sb = new StringBuilder();
+        int num = 0;
+        while(f!=0){
+            sb.append('5');
+            f--;
+        }
+        while(z!=0){
+            sb.append('0');
+            z--;
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int fcounter = 0;
+        int zcounter = 0;
+
+        for(int  i=1;i<=n;i++){
+            int val = sc.nextInt();
+            if(val==0){
+                zcounter++;
+            }
+            else{
+                fcounter++;
+            }
+        }   
+
+        String ans = "-1";
+        if(fcounter<9){
+            if(zcounter>0)
+            ans = "0";
+            else{
+                ans="-1";
+            }
+        }
+        else{
+            int mod = fcounter%9;
+                fcounter-=mod;
+            if(zcounter==0){
+                ans="-1";
+            }
+            else{
+                ans = getAns(fcounter,zcounter);
+            }
+        }
+        System.out.println(ans);
+    }
+}

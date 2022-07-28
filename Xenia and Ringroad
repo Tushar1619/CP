@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+       int m = sc.nextInt();
+       long prev=1;
+       long ans = 0;
+       for(int i=1;i<=m;i++){
+        long curr = sc.nextInt();
+        if(prev<=curr){
+            ans+=(long)(curr-prev);
+        }
+        else{
+            ans+=(long)(n-(prev-curr));
+        }
+        prev=curr;
+       }
+        System.out.println(ans);
+    }
+}
