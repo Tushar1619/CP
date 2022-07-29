@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+#define ll long long
+#include <algorithm>
+
+int main() {
+	// your code goes here
+	int t;cin>>t;
+	
+	while(t-->0){
+	    int n; cin>>n;
+	    ll arr[n];
+	    for(int i=0;i<n;i++)
+	    cin>>arr[i];
+	    
+	    sort(arr,arr+n);
+	    ll req=0,avail=0;
+	    	for(int i=0;i<n;i++){
+		    req+=(arr[n-1]-arr[i]);
+		}
+		
+		int ans=0;
+		if(req!=0){
+		for(int i=n-1;i>0;i--){
+		    avail+=arr[i];
+		    ans++;
+		    req-=(i*(arr[i]-arr[i-1]));
+		    if(avail>=req){
+		        break;
+		    }
+		}
+		}
+		cout<<ans<<endl;
+	}
+	return 0;
+}
