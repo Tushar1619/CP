@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main{
+   
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int goals = sc.nextInt();
+        int t1c=0;
+        int t2c=0;
+        String t1="";
+        String t2 ="";
+        for(int i=0;i<goals;i++){
+            String teamName = sc.next();
+            if(i==0){
+                t1=teamName;
+                t1c++;
+            }
+            else if(teamName.equals(t1)){
+                t1c++;
+            }
+            else if(teamName.equals(t2)){
+                t2c++;
+            }
+            else{
+                t2=teamName;
+            }
+        }
+        if(t1c>t2c){
+            System.out.println(t1);
+        }
+        else{
+            System.out.println(t2);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int m = sc.nextInt();
+       int ans = 0;
+       Integer[] arr = new Integer[n];
+       for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+       }
+       Arrays.sort(arr, Collections.reverseOrder());
+       for(int i=n-1;i>=0;i--){
+        if(m==0) break;
+        int val = arr[i];
+        if(val<0){
+            ans+=val;
+            m--;
+        }
+       }
+       System.out.println(-1*ans);
+    }
+}
