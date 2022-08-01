@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int a = sc.nextInt();
+       int b = sc.nextInt();
+        int ans = 0;
+       int pos = a+1;
+       if(b>=n-pos){
+        ans=n-pos;
+        ans++;
+       }
+       else{
+        int val = n-pos;
+        pos+=val-b;
+        ans=n-pos;
+        ans++;
+       }
+System.out.println(ans);
+    }
+}
