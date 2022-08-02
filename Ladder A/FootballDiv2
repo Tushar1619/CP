@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+   
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int zcounter=0;
+        int ocounter=0;
+        String ans = "NO";
+        for(int i=0;i<str.length();i++){
+            char ch = str.charAt(i);
+            if(ch=='0'){
+                ocounter=0;
+                zcounter++;
+                if(zcounter==7){
+                    ans = "YES";
+                    break;
+                }
+            }
+            if(ch=='1'){
+                zcounter=0;
+                ocounter++;
+                if(ocounter==7){
+                    ans = "YES";
+                    break;
+                }
+            }
+        }
+        System.out.println(ans);
+    }
+}
