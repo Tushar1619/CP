@@ -1,0 +1,34 @@
+/* package codechef; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+public class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    //the question is followin the pattern of n 1,2,3,4 n-1
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        for (int row = -n; row <= n; ++row)
+        {
+            int top = n - Math.abs(row);
+            for (int i = 0; i < Math.abs(row); ++i)
+            {
+                System.out.print("  ");
+            }
+            for (int i = 0; i < top; ++i)
+            {
+                System.out.print(i+" ");
+            }
+            for (int i = top; i > 0; --i)
+            {
+                System.out.print(i+" ");
+            }
+            System.out.println(0);
+        }
+        }
+	}
