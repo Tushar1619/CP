@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+void solution(){
+     int x;
+    cin>>x;
+    if(x>100 and x<=1000){
+        x = x-25;
+    }
+    else if(x>1000 and x<=5000){
+        x=x-100;
+    }
+    else if(x>5000){
+        x = x-500;
+    }
+    cout<<x<<endl;
+
+}
+int main() {
+	// your code goes here
+   int t;
+   cin>>t;
+   while(t--){
+       solution();
+   }
+}
