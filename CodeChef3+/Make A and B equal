@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void sol(){
+    int A;
+    int B;
+    cin>>A;
+    cin>>B;
+    int a = max(A,B);
+    int b = min(A,B);
+    while(b*2<=a){
+        b*=2;
+    }
+    if(b==a){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+}
+int main() {
+	// your code goes here
+    int t;
+    cin>>t;
+    while(t--){
+        sol();
+    }
+}
