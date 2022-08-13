@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+void sol(){
+    int x;
+    cin>>x;
+    string ans = "NO";
+    int lim = sqrt(x);
+    for(int i=1;i<lim;i++){
+        int num = x-2*i;
+        int den = 2+i;
+        if(num%den==0){
+            ans = "YES";
+            break;
+        }
+    }
+    cout<<ans<<endl;
+}
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t-->0){
+	    sol();
+	}
+	return 0;
+}
