@@ -1,0 +1,63 @@
+if(min of the array ^ x < min of the array){
+    if(y is even) break;(the array wont change)
+    else {
+        do xor of the min 
+        break;
+    }
+}
+//* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-->0){
+		    int n = sc.nextInt();
+		    int x = sc.nextInt(); //xor 
+		    int y = sc.nextInt(); //times 
+            int[] arr = new int[n];
+            PriorityQueue<Integer> pq = new PriorityQueue<>();
+            for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+                pq.add(arr[i]);
+            }
+            
+            while(y>0){
+                int min = pq.peek();
+                if( (min^x) >min){
+                    pq.remove();
+                    pq.add(min ^ x);
+                    y--;
+                }
+                else{
+                    if(y%2==0){
+                        break;
+                    }
+                    else{
+                        pq.remove();
+                        pq.add(min ^ x);
+                        break;
+                    }
+                }
+            }
+            int[] ans = new int[n];
+            int i=0;
+            while(pq.size()>0){
+                ans[i]=pq.remove();
+                i++;
+            }
+            for(int el:ans){
+                System.out.print(el+" ");
+            }
+            System.out.println();
+		}
+	}
+}
