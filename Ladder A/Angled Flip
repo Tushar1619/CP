@@ -1,0 +1,126 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            int m=sc.nextInt();
+            int a1[][] = new int[n][m];
+            int a2[][] = new int[n][m];
+            
+            if(n==1 || m==1){
+                int flag=0;
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<m;j++){
+                        a1[i][j]=sc.nextInt();
+                    }
+                }
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<m;j++){
+                        a2[i][j]=sc.nextInt();
+                        if(a2[i][j]!=a1[i][j]){
+                            flag=1;
+                            break;
+                        }
+                    }
+                }
+                if(flag==1){
+                    System.out.println("NO");
+                }
+                else{
+                    System.out.println("YES");
+                }
+            }
+            else{
+                HashMap<Integer,Integer> even = new HashMap<>();
+                HashMap<Integer,Integer> odd = new HashMap<>();
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<m;j++){
+                        int val = sc.nextInt();
+                        if( (i+j)%2==0 ){
+                            if(even.containsKey(val)){
+                                even.put(val,even.get(val)+1);
+                            }
+                            else{
+                                even.put(val,1);
+                            }
+                        }
+                        else{
+                            if(odd.containsKey(val)){
+                                odd.put(val,odd.get(val)+1);
+                            }
+                            else{
+                                odd.put(val,1);
+                            }
+                        }
+                    }
+                }
+                boolean flag = true;
+                for(int i=0;i<n;i++){
+                    for(int j=0;j<m;j++){
+                        int val = sc.nextInt();
+                        if( (i+j)%2==0 ){
+                            if(even.containsKey(val)){
+                                even.put(val,even.get(val)-1);
+                                if(even.get(val)==0){
+                                    even.remove(val);
+                                }
+                            }
+                            else{
+                                flag=false;
+                                break;
+                            }
+                        }
+                        else{
+                            if(odd.containsKey(val)){
+                                odd.put(val,odd.get(val)-1);
+                                if(odd.get(val)==0){
+                                    odd.remove(val);
+                                }
+                            }
+                            else{
+                                flag = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if(flag==false){
+                    System.out.println("NO");
+                    continue;
+                }
+                if(even.size()!=0 || odd.size()!=0){
+                    flag=false;
+                }
+
+                if(flag){
+                    System.out.println("YES");
+                }
+                else{
+                    System.out.println("NO");
+                }
+            }
+        }
+	}
+}
+
+
+
+
+
+1
+2 3
+1 4 3
+4 5 6
+1 4 3
+6 5 4
