@@ -1,0 +1,42 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		
+		while(t-->0){
+            
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+            StringBuilder sb = new StringBuilder(sc.next(););
+            int op=n+k-1;
+            for(int i=0;i<n;i++){
+                if(sb.charAt(i)=='1'){
+                    if(i+k-1<n){
+                        int temp = k;
+                        int idx=i;
+                        while(temp-->0 && op>0){
+                            op--;
+                            if(sb.charAt(idx)=='0'){
+                                sb.replace(idx,idx+1,"1");
+                            }
+                            else{
+                                sb.replace(idx,idx+1,"0");
+                            }
+                            idx++;
+                        }
+                    }
+                }
+            }
+            System.out.println(sb.toString());
+        }
+	}
+}
